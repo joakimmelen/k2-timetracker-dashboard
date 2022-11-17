@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap');
+
+body {
+    font-family: "Source Sans Pro", sans-serif;
+}
+
+.app {
+    display: flex;
+}
+
+
+    .navbar {
+        width: 200px;
+        background-color: #365262;
+        color: #EBF8FE;
+        padding-top: 200px;
+        padding-left: 20px;
+        height: 100vh;
+    }
+
+    .navbar-active {
+        color: rgb(206, 125, 25)!important;
+      
+    }
+
+    .navbar__items {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navbar__items a {
+        color: #ebf8fe;
+        font-size: 20px;
+        margin-bottom: 40px;
+        text-decoration: none;
+    }
+
+    .overview-nav {
+       margin-top: 70px;
+       margin-bottom: 60px;
+    }
+    .overview-nav-active {
+       color: #365262 !important;
+    }
+
+    .overview-nav a {
+        color: #A2A2A2;
+        font-size: 30px;
+        font-weight: 500;
+        text-decoration: none;
+        padding: 20px;
+    }
+
+    .inner-content {
+        padding-top: 70px;
+        padding-left: 40px;
+    }
+
+    h1 {
+        color: #365262;
+        font-size: 30px;
+        font-weight: 500;
+
+    }
+
+    h2 {
+        color: #365262;
+        font-size: 24px;
+        font-weight: 500;
+    }
+
+    .login {
+        padding-top: 70px;
+        padding-left: 40px;
+    }
+
+    .login button {
+        margin-top: 40px;
+    }
+
+    .login p {
+        margin-top: 30px;
+    }
+
+    .timer-container {
+        display: flex;
+        letter-spacing: 2px;
+        font-size: 3rem;
+        margin-top: 70px;
+    }
+
+    .timer-container span {
+        position: relative;
+        top: 45px;
+        font-size: 3rem;
+    }
