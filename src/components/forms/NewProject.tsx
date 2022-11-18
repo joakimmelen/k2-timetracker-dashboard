@@ -5,18 +5,20 @@ import { useTimeTrackContext } from "../../context/TimeTrackerContext";
 function NewProjectForm() {
   const [projectName, setProjectName] = useState<string>("");
   const [projectColor, setProjectColor] = useState<string>("#f6b73c");
-  const [projectRate, setProjectRate] = useState<number>(0);
+  const [projectRate, setProjectRate] = useState<number>();
   const [projectAdded, setProjectAdded] = useState();
   const { addProject } = useTimeTrackContext();
 
   function handleSubmit(e: any) {
     const project = {
-      name: projectName,
+      title: projectName,
       rate: projectRate,
       color: projectColor,
     };
     e.preventDefault();
+    addProject(project);
     console.log(project);
+    setProjectName("");
   }
 
   return (
@@ -44,7 +46,7 @@ function NewProjectForm() {
           name="projectRate"
           id="projectRate"
           onChange={(e) => {
-            console.log(parseInt(e.target.value));
+            setProjectRate(parseInt(e.target.value));
           }}
         />
         <br />

@@ -11,6 +11,7 @@ import axios from "axios";
 
 type TimeContext = {
   addProject: Function;
+  projects: Array<object>;
 };
 interface TimeProps {
   children: React.ReactNode;
@@ -33,11 +34,7 @@ export function TimeTrackerProvider({ children }: TimeProps) {
   const addProject = useCallback(
     (title: string, hrate: number, color: string) => {
       axios
-        .post("http://localhost:3000/projects", {
-          title,
-          color,
-          hrate,
-        })
+        .post("http://localhost:3000/projects", title, hrate, color)
         .then(() => {
           updateProjects();
         });
