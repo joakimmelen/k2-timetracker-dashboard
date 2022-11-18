@@ -1,29 +1,33 @@
-import React, { useState, useRef } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useTimeTrackContext } from "../../context/TimeTrackerContext";
-import styles from "./NewForm.module.css";
 
 function NewProjectForm() {
-  const [projectName, setProjectName] = useState("");
+  const [projectName, setProjectName] = useState<string>("");
+  const [projectColor, setProjectColor] = useState<string>("#f6b73c");
+  const [projectRate, setProjectRate] = useState<number>(0);
   const [projectAdded, setProjectAdded] = useState();
-  const [projectColor, setProjectColor] = useState();
   const { addProject } = useTimeTrackContext();
 
-  function handleSubmit(e: Event) {
+  function handleSubmit(e: any) {
+    const project = {
+      name: projectName,
+      rate: projectRate,
+      color: projectColor,
+    };
     e.preventDefault();
-    addProject(projectName, projectColor);
-    setProjectName("");
+    console.log(project);
   }
 
   return (
-    <div className={styles.container}>
-      <div className={styles.topcontainer}>
+    <div>
+      <div>
         <h2>Create Project</h2>
         <Link to={`/overview`}>
           <button>Back</button>
         </Link>
       </div>
-      <form className={styles.formular} onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <label htmlFor="projectName">Project Name</label>
         <input
           type="text"
@@ -34,13 +38,25 @@ function NewProjectForm() {
           autoComplete="off"
         />
         <br />
+        <label htmlFor="projectRate">Hourly Rate</label>
+        <input
+          type="number"
+          name="projectRate"
+          id="projectRate"
+          onChange={(e) => {
+            console.log(parseInt(e.target.value));
+          }}
+        />
+        <br />
         <label htmlFor="projectColor">Project Color</label>
         <input
           type="color"
-          ref={projectColorRef}
+          onChange={(e) => setProjectColor(e.target.value)}
+          value={projectColor}
           name="projectColor"
           id="projectColor"
         />
+        <br />
         <button type="submit">Submit</button>
       </form>
     </div>

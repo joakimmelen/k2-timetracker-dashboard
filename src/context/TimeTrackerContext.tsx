@@ -45,6 +45,21 @@ export function TimeTrackerProvider({ children }: TimeProps) {
     []
   );
 
+  const editProject = useCallback(
+    (id: number, title?: string, color?: string, hrate?: number) => {
+      axios
+        .patch(`http://localhost:3000/projects/${id}`, {
+          title,
+          color,
+          hrate,
+        })
+        .then(() => {
+          updateProjects();
+        });
+    },
+    []
+  );
+
   const removeProject = useCallback((id: number) => {
     axios.delete(`http://localhost:3000/projects/${id}`).then(() => {
       updateProjects();
@@ -56,16 +71,20 @@ export function TimeTrackerProvider({ children }: TimeProps) {
   }, []);
   useEffect(updateTasks, []);
 
-  const addTask = useCallback((projectId: number, title: string) => {
-    axios
-      .post("http://localhost:3000/tasks", {
-        projectId,
-        title,
-      })
-      .then(() => {
-        updateTasks();
-      });
-  }, []);
+  const addTask = useCallback(
+    (projectId: number, title: string, time_spent?: number) => {
+      axios
+        .post("http://localhost:3000/tasks", {
+          projectId,
+          title,
+          time_spent,
+        })
+        .then(() => {
+          updateTasks();
+        });
+    },
+    []
+  );
 
   const removeTask = useCallback((id: number) => {
     axios.delete(`http://localhost:3000/tasks/${id}`).then(() => {
@@ -83,10 +102,10 @@ export function TimeTrackerProvider({ children }: TimeProps) {
       projectId: number,
       task_title: string,
       start_date: string,
-      start_time: string,
-      end_date: string,
-      end_time: string,
-      total_time_seconds: number
+      start_time: number,
+      end_date?: string,
+      end_time?: number,
+      total_time_seconds?: number
     ) => {
       axios
         .post("http://localhost:3000/timelogs", {
@@ -151,6 +170,7 @@ export function TimeTrackerProvider({ children }: TimeProps) {
     return {
       projects,
       addProject,
+      editProject,
       removeProject,
       tasks,
       addTask,
@@ -165,6 +185,7 @@ export function TimeTrackerProvider({ children }: TimeProps) {
   }, [
     projects,
     addProject,
+    editProject,
     removeProject,
     tasks,
     addTask,
