@@ -11,7 +11,13 @@ import axios from "axios";
 
 type TimeContext = {
   addProject: Function;
-  projects: Array<object>;
+  projects: any;
+  editProject: Function;
+  removeProject: Function;
+  tasks: any;
+  addTask: Function;
+  editTask: Function;
+  removeTask: Function;
 };
 interface TimeProps {
   children: React.ReactNode;
@@ -21,10 +27,10 @@ export const TimeTrackContext = createContext<TimeContext | undefined>(
 );
 
 export function TimeTrackerProvider({ children }: TimeProps) {
-  const [projects, setProjects] = useState<Array<string>>([]);
-  const [tasks, setTasks] = useState<Array<string>>([]);
-  const [times, setTimes] = useState<Array<string>>([]);
-  const [invoices, setInvoices] = useState<Array<string>>([]);
+  const [projects, setProjects] = useState<Array<object>>([]);
+  const [tasks, setTasks] = useState<Array<object>>([]);
+  const [times, setTimes] = useState<Array<object>>([]);
+  const [invoices, setInvoices] = useState<Array<object>>([]);
 
   const updateProjects = useCallback(() => {
     getProjects().then((res) => setProjects(res.data));
@@ -34,7 +40,7 @@ export function TimeTrackerProvider({ children }: TimeProps) {
   const addProject = useCallback(
     (title: string, hrate: number, color: string) => {
       axios
-        .post("http://localhost:3000/projects", title, hrate, color)
+        .post("http://localhost:3000/projects", { title, hrate, color })
         .then(() => {
           updateProjects();
         });
@@ -69,10 +75,24 @@ export function TimeTrackerProvider({ children }: TimeProps) {
   useEffect(updateTasks, []);
 
   const addTask = useCallback(
-    (projectId: number, title: string, time_spent?: number) => {
+    (projectId: number, title: string, time_spent: number) => {
       axios
         .post("http://localhost:3000/tasks", {
           projectId,
+          title,
+          time_spent,
+        })
+        .then(() => {
+          updateTasks();
+        });
+    },
+    []
+  );
+
+  const editTask = useCallback(
+    (id: number, title?: string, time_spent?: number) => {
+      axios
+        .patch(`http://localhost:3000/tasks/${id}`, {
           title,
           time_spent,
         })
@@ -171,6 +191,7 @@ export function TimeTrackerProvider({ children }: TimeProps) {
       removeProject,
       tasks,
       addTask,
+      editTask,
       removeTask,
       times,
       addTime,
@@ -186,6 +207,7 @@ export function TimeTrackerProvider({ children }: TimeProps) {
     removeProject,
     tasks,
     addTask,
+    editTask,
     removeTask,
     times,
     addTime,

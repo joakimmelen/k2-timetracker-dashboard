@@ -10,14 +10,9 @@ function NewProjectForm() {
   const { addProject } = useTimeTrackContext();
 
   function handleSubmit(e: any) {
-    const project = {
-      title: projectName,
-      rate: projectRate,
-      color: projectColor,
-    };
     e.preventDefault();
-    addProject(project);
-    console.log(project);
+    addProject(projectName, projectRate, projectColor);
+    console.log(projectName, projectRate, projectColor);
     setProjectName("");
   }
 
@@ -25,9 +20,6 @@ function NewProjectForm() {
     <div>
       <div>
         <h2>Create Project</h2>
-        <Link to={`/overview`}>
-          <button>Back</button>
-        </Link>
       </div>
       <form onSubmit={handleSubmit}>
         <label htmlFor="projectName">Project Name</label>

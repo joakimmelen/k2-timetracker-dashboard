@@ -2,9 +2,33 @@
   "projects": [
     {
       "title": "Flee the bee",
-      "rate": 432,
-      "color": "#f6b73c",
+      "hrate": 444,
+      "color": "#5199e1",
       "id": 1
+    },
+    {
+      "title": "Enter the fight",
+      "hrate": 231,
+      "color": "#80ff00",
+      "id": 2
+    },
+    {
+      "title": "Exit woundz",
+      "hrate": 541,
+      "color": "#cb34b5",
+      "id": 3
+    },
+    {
+      "title": "heyheyhey",
+      "hrate": 123123,
+      "color": "#008080",
+      "id": 5
+    },
+    {
+      "title": "Fix tasks",
+      "hrate": 0,
+      "color": "#f6b73c",
+      "id": 6
     }
   ],
   "tasks": [],
