@@ -1,28 +1,26 @@
 import { useState } from "react";
+import { useTimeTrackContext } from "../../context/TimeTrackerContext";
+import { v4 as uuidv4 } from "uuid";
 
-type Props = {
-  setTimeInSeconds: Function;
-};
-
-export const Controls = (props: Props) => {
-  const { setTimeInSeconds } = props;
-  const [intervalId, setIntervalId] = useState<number>(0);
+export const Controls = (props: any) => {
+  const { addTime } = useTimeTrackContext();
 
   const handlePlayButton = () => {
-    let interval: number = setInterval(() => {
-      setTimeInSeconds((prevState: number) => prevState + 1);
-    }, 1000);
-    setIntervalId(interval);
-  };
+    const uuid = uuidv4();
+    const active = true;
 
-  const handleStopButton = () => {
-    clearInterval(intervalId);
+    addTime(
+      uuid,
+      props.id,
+      active,
+      new Date().toISOString().slice(0, 10),
+      Date.now()
+    );
   };
 
   return (
     <div className="controls-container">
-      <button onClick={handlePlayButton}>Play</button>
-      <button onClick={handleStopButton}>Stop</button>
+      <button onClick={handlePlayButton}>New Timer</button>
     </div>
   );
 };

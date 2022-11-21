@@ -6,9 +6,9 @@ export const navigationItems = {
             text: "dashboard"
         },
         {
-            name: "Overview",
-            to: "/overview",
-            text: "overview"
+            name: "Edit",
+            to: "/edit",
+            text: "edit"
         },
         {
             name: "Timer",

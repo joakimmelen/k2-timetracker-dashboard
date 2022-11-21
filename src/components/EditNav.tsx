@@ -1,13 +1,13 @@
 import { Link, NavLink } from "react-router-dom";
 
-const OverviewNav = () => {
+const EditNav = () => {
   return (
-    <div className="overview-nav">
-      <div className="overview-nav__items">
+    <div className="edit-nav">
+      <div className="edit-nav__items">
         <NavLink
           to="projects"
           className={({ isActive }) =>
-            isActive ? "overview-nav-active" : undefined
+            isActive ? "edit-nav-active" : undefined
           }
         >
           Projects
@@ -15,7 +15,7 @@ const OverviewNav = () => {
         <NavLink
           to="tasks"
           className={({ isActive }) =>
-            isActive ? "overview-nav-active" : undefined
+            isActive ? "edit-nav-active" : undefined
           }
         >
           Tasks
@@ -25,4 +25,4 @@ const OverviewNav = () => {
   );
 };
 
-export default OverviewNav;
+export default EditNav;

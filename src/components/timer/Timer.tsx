@@ -1,26 +1,23 @@
-import { useEffect, useState } from "react";
-import { calculateTime } from "./CalculateTime";
-import { Controls } from "./Controls";
+import TaskCard from "../cards/TaskCard";
+import { useTimeTrackContext } from "../../context/TimeTrackerContext";
+
+type TaskCardProps = {
+  id: string;
+  projectId: string;
+  projectTitle: string;
+  title: string;
+  time_spent: number;
+  invoiced: string;
+};
 
 const Timer = () => {
-  const [timeInSeconds, setTimeInSeconds] = useState<number>(0);
-  const [timerArray, setTimerArray] = useState<Array<number | string>>([]);
-
-  useEffect(() => {
-    let timeArray: Array<number | string> = calculateTime(timeInSeconds);
-    setTimerArray(timeArray);
-  }, [timeInSeconds]);
+  const { tasks } = useTimeTrackContext();
 
   return (
     <>
-      <div className="timer-container">
-        <p className="timer-text">{timerArray[0]}</p>
-        <span>:</span>
-        <p className="timer-text">{timerArray[1]}</p>
-        <span>:</span>
-        <p className="timer-text">{timerArray[2]}</p>
-      </div>
-      <Controls setTimeInSeconds={setTimeInSeconds} />
+      {tasks.map((task: TaskCardProps) => (
+        <TaskCard key={task.id} {...task} />
+      ))}
     </>
   );
 };

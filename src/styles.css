@@ -6,6 +6,7 @@ body {
 
 .app {
     display: flex;
+    
 }
 
 
@@ -35,15 +36,15 @@ body {
         text-decoration: none;
     }
 
-    .overview-nav {
+    .edit-nav {
        margin-top: 70px;
        margin-bottom: 60px;
     }
-    .overview-nav-active {
+    .edit-nav-active {
        color: #365262 !important;
     }
 
-    .overview-nav a {
+    .edit-nav a {
         color: #A2A2A2;
         font-size: 30px;
         font-weight: 500;
@@ -52,8 +53,13 @@ body {
     }
 
     .inner-content {
-        padding-top: 70px;
+        display: flex;
+        flex-wrap: wrap;
+        width: 70vw;
+        
+        /* padding-top: 70px; */
         padding-left: 40px;
+        gap: 3rem;
     }
 
     h1 {
@@ -84,13 +90,21 @@ body {
 
     .timer-container {
         display: flex;
+        flex-direction: column;
         letter-spacing: 2px;
-        font-size: 3rem;
-        margin-top: 70px;
+        font-size: 1rem;
+        /* margin-top: 70px; */
+        
     }
 
     .timer-container span {
         position: relative;
-        top: 45px;
-        font-size: 3rem;
+        top: 15px;
+        font-size: 1rem;
+    }
+    
+    .time-card-container {
+        display: flex;
+        flex-direction: row;
+       
     }

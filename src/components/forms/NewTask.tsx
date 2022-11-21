@@ -1,15 +1,42 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { useTimeTrackContext } from "../../context/TimeTrackerContext";
+import { v4 as uuidv4 } from "uuid";
 
 function NewTaskForm() {
+  const [project, setProject] = useState({ id: "dead", title: "dead" });
   const [taskName, setTaskName] = useState<string>("");
-  const { addTask, tasks, projects } = useTimeTrackContext();
+  const time_spent = 0;
+  const invoiced = "no";
+  const [chosenProject, setChosenProject] = useState(false);
+  const { addTask, projects } = useTimeTrackContext();
 
   function handleSubmit(e: any) {
+    console.log(project);
     e.preventDefault();
-    addTask(taskName);
+    if (project.id == "dead") {
+      console.log("Invalid data, not successfull");
+    } else {
+      addTask(
+        uuidv4(),
+        project.id,
+        project.title,
+        taskName,
+        time_spent,
+        invoiced
+      );
+      console.log("task successfully added");
+    }
   }
+
+  const handleChange = (e: any) => {
+    if (e.target.value == "nobueno") {
+      setProject({ id: "dead", title: "dead" });
+      console.log("This is an invalid project");
+    } else {
+      setProject(JSON.parse(e.target.value));
+      setChosenProject(true);
+    }
+  };
 
   return (
     <div>
@@ -28,17 +55,29 @@ function NewTaskForm() {
         />
         <br />
         <label htmlFor="project">For what project?</label>
-        <select name="project" id="project">
-          {projects.map((project: any) => {
-            {
-              console.log(project);
-            }
-            <option value={project.id}>{project.title}</option>;
-          })}
+        <select onChange={handleChange} name="project" id="project">
+          <option value="nobueno">----</option>
+          {projects.map(
+            (project: {
+              id: number;
+              title: string;
+              hrate: number;
+              color: string;
+            }) => (
+              <option key={project.id} value={JSON.stringify(project)}>
+                {project.title}
+              </option>
+            )
+          )}
         </select>
 
         <br />
-        <button type="submit">Submit</button>
+
+        {!chosenProject ? (
+          <p>Choose project</p>
+        ) : (
+          <button type="submit">Submit</button>
+        )}
       </form>
     </div>
   );

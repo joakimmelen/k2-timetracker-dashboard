@@ -1,6 +1,4 @@
-import { useState } from "react";
 import { useTimeTrackContext } from "../context/TimeTrackerContext";
-import ProjectCard from "./cards/ProjectCard";
 import NewProjectForm from "./forms/NewProject";
 
 const Projects = () => {
@@ -30,7 +28,6 @@ const Projects = () => {
         <NewProjectForm />
       </section>
       <section>
-        <button onClick={() => console.log(projects)}>log projects</button>
         {projects.map((project: any) => (
           <div key={project.id}>
             <h5>

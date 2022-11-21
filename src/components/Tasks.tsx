@@ -1,7 +1,4 @@
-import { useState } from "react";
 import { useTimeTrackContext } from "../context/TimeTrackerContext";
-import ProjectCard from "./cards/ProjectCard";
-import NewProjectForm from "./forms/NewProject";
 import NewTaskForm from "./forms/NewTask";
 
 const Tasks = () => {
@@ -19,7 +16,8 @@ const Tasks = () => {
     };
 
   const handleRemove = (id: number) => {
-    console.log(`Project with id ${id} has been successfully removed`);
+    removeTask(id);
+    console.log(`Task with id ${id} has been successfully removed`);
   };
 
   return (
@@ -30,10 +28,13 @@ const Tasks = () => {
         <NewTaskForm />
       </section>
       <section>
-        <button onClick={() => console.log(tasks)}>log Tasks</button>
         {tasks.map((task: any) => (
           <div key={task.id}>
-            <h5>{task.title}</h5>
+            <span>
+              <h3>{task.title}</h3>
+              <h6>on project:</h6>
+              <h4>{task.projectTitle}</h4>
+            </span>
             <button
               onClick={() => {
                 handleEdit(task);

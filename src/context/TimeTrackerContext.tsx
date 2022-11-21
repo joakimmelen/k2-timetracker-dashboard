@@ -18,6 +18,9 @@ type TimeContext = {
   addTask: Function;
   editTask: Function;
   removeTask: Function;
+  addTime: Function;
+  times: any;
+  editTime: Function;
 };
 interface TimeProps {
   children: React.ReactNode;
@@ -38,9 +41,14 @@ export function TimeTrackerProvider({ children }: TimeProps) {
   useEffect(updateProjects, []);
 
   const addProject = useCallback(
-    (title: string, hrate: number, color: string) => {
+    (id: string, title: string, hrate: number, color: string) => {
       axios
-        .post("http://localhost:3000/projects", { title, hrate, color })
+        .post("http://localhost:3000/projects", {
+          id,
+          title,
+          hrate,
+          color,
+        })
         .then(() => {
           updateProjects();
         });
@@ -49,7 +57,7 @@ export function TimeTrackerProvider({ children }: TimeProps) {
   );
 
   const editProject = useCallback(
-    (id: number, title?: string, color?: string, hrate?: number) => {
+    (id: string, title?: string, color?: string, hrate?: number) => {
       axios
         .patch(`http://localhost:3000/projects/${id}`, {
           title,
@@ -63,9 +71,10 @@ export function TimeTrackerProvider({ children }: TimeProps) {
     []
   );
 
-  const removeProject = useCallback((id: number) => {
+  const removeProject = useCallback((id: string) => {
     axios.delete(`http://localhost:3000/projects/${id}`).then(() => {
       updateProjects();
+      updateTasks();
     });
   }, []);
 
@@ -75,12 +84,22 @@ export function TimeTrackerProvider({ children }: TimeProps) {
   useEffect(updateTasks, []);
 
   const addTask = useCallback(
-    (projectId: number, title: string, time_spent: number) => {
+    (
+      id: string,
+      projectId: string,
+      projectTitle: string,
+      title: string,
+      time_spent: number,
+      invoiced: string
+    ) => {
       axios
         .post("http://localhost:3000/tasks", {
+          id,
           projectId,
+          projectTitle,
           title,
           time_spent,
+          invoiced,
         })
         .then(() => {
           updateTasks();
@@ -90,7 +109,7 @@ export function TimeTrackerProvider({ children }: TimeProps) {
   );
 
   const editTask = useCallback(
-    (id: number, title?: string, time_spent?: number) => {
+    (id: string, title?: string, time_spent?: number) => {
       axios
         .patch(`http://localhost:3000/tasks/${id}`, {
           title,
@@ -116,8 +135,9 @@ export function TimeTrackerProvider({ children }: TimeProps) {
 
   const addTime = useCallback(
     (
-      projectId: number,
-      task_title: string,
+      id: string,
+      taskId: string,
+      active: boolean,
       start_date: string,
       start_time: number,
       end_date?: string,
@@ -126,13 +146,29 @@ export function TimeTrackerProvider({ children }: TimeProps) {
     ) => {
       axios
         .post("http://localhost:3000/timelogs", {
-          projectId,
-          task_title,
+          id,
+          taskId,
+          active,
           start_date,
           start_time,
           end_date,
           end_time,
           total_time_seconds,
+        })
+        .then(() => {
+          updateTimes();
+        });
+    },
+    []
+  );
+
+  const editTime = useCallback(
+    (id: string, active: boolean, end_date: string, end_time: number) => {
+      axios
+        .patch(`http://localhost:3000/timelogs/${id}`, {
+          active,
+          end_date,
+          end_time,
         })
         .then(() => {
           updateTimes();
@@ -195,6 +231,7 @@ export function TimeTrackerProvider({ children }: TimeProps) {
       removeTask,
       times,
       addTime,
+      editTime,
       removeTime,
       invoices,
       addInvoice,
@@ -211,6 +248,7 @@ export function TimeTrackerProvider({ children }: TimeProps) {
     removeTask,
     times,
     addTime,
+    editTime,
     removeTime,
     invoices,
     addInvoice,

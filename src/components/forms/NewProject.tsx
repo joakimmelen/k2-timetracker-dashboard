@@ -1,18 +1,18 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { useTimeTrackContext } from "../../context/TimeTrackerContext";
+import { v4 as uuidv4 } from "uuid";
 
 function NewProjectForm() {
   const [projectName, setProjectName] = useState<string>("");
   const [projectColor, setProjectColor] = useState<string>("#f6b73c");
   const [projectRate, setProjectRate] = useState<number>();
-  const [projectAdded, setProjectAdded] = useState();
   const { addProject } = useTimeTrackContext();
 
   function handleSubmit(e: any) {
     e.preventDefault();
-    addProject(projectName, projectRate, projectColor);
-    console.log(projectName, projectRate, projectColor);
+
+    addProject(uuidv4(), projectName, projectRate, projectColor);
+
     setProjectName("");
   }
 
