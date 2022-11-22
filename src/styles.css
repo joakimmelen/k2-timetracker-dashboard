@@ -12,11 +12,48 @@ body {
 
     .navbar {
         width: 200px;
-        background-color: #365262;
+        background-color: #333;
         color: #EBF8FE;
         padding-top: 200px;
         padding-left: 20px;
         height: 100vh;
+        position: fixed;
+        top: 0px;
+    }
+
+    .toggle-button {
+        position: absolute;
+        top: .8rem;
+        right: 1.25rem;
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+    }
+
+    .toggle-button-active {
+        position: absolute;
+        top: .8rem;
+        right: 1.25rem;
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+    }
+
+    .toggle-button .bar {
+        height: 3px;
+        width: 100%;
+        background-color: white;
+        border-radius: 10px;
+    }
+    .toggle-button-active .bar {
+        height: 5px;
+        width: 100%;
+        background-color: white;
+        border-radius: 10px;
     }
 
     .navbar-active {
@@ -24,9 +61,16 @@ body {
       
     }
 
+    .navbar__items a:hover {
+        background-color: rgba(206, 125, 25, 0.318);
+        color: white!important;
+    }
+
     .navbar__items {
         display: flex;
         flex-direction: column;
+        width: 60%;
+        
     }
 
     .navbar__items a {
@@ -34,6 +78,59 @@ body {
         font-size: 20px;
         margin-bottom: 40px;
         text-decoration: none;
+
+    }
+
+    .edit {
+        display: flex;
+        
+        align-items: flex-start;
+    }
+
+    .cards {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .projects {
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    .project-card {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        padding: 0 0 10px 0px;
+        margin: 15px 20px;
+        min-width: 15rem;
+        width: 60vw;
+        border: 1px solid #333;
+        border-radius: 10px;
+    }
+
+    .project-card-top {
+        height: 50px;
+        border-radius: 9px 9px 0 0;
+    }
+
+    .project-card button {
+        width: 60px;
+
+    }
+
+    .task-card {
+        border: 1px solid #333;
+        border-radius: 10px;
+        
+    }
+
+    .task-card-top {
+        height: 20px;
+        border-radius: 9px 9px 0 0;
     }
 
     .edit-nav {
@@ -55,12 +152,15 @@ body {
     .inner-content {
         display: flex;
         flex-wrap: wrap;
+        flex-direction: row;
         width: 70vw;
         
         /* padding-top: 70px; */
-        padding-left: 40px;
+        padding-left: 250px;
         gap: 3rem;
     }
+
+    
 
     h1 {
         color: #365262;
@@ -97,7 +197,7 @@ body {
         
     }
 
-    .timer-container span {
+    .time-card-container span {
         position: relative;
         top: 15px;
         font-size: 1rem;
@@ -107,4 +207,105 @@ body {
         display: flex;
         flex-direction: row;
        
+    }
+
+    .modal-overlay {
+        z-index: 9999;
+        width: 80vw;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        background: rgba(0, 0, 0, 0.364);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .modal-box {
+        display: block;
+        background: white;
+        width: 70%;
+        height: 40%;
+        padding: 1rem;
+        border-radius: 1rem;
+      }
+
+      @media (max-width: 700px){
+        .toggle-button {
+            display: flex;
+        }
+        .toggle-button-active {
+            display: flex;
+        }
+        
+        .inner-content {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            
+            width: 99vw;
+            height: auto;
+            /* padding-top: 70px; */
+            padding-left: 1px;
+            gap: 0rem;
+        }
+
+        .navbar {
+            width: 100vw;
+            background-color: #333;
+            color: #EBF8FE;
+            padding-top: 0px;
+            padding-left: 0px;
+            height: 5vh;
+            position: fixed;
+            top: 95vh;
+            
+        }
+
+        .navbar-active {
+            color: rgb(206, 125, 25)!important;
+          
+        }
+    
+        .navbar__items a:hover {
+            background-color: rgba(206, 125, 25, 0.318);
+            color: white!important;
+        }
+    
+        .navbar__items {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-evenly;
+            padding: 10px;
+            /* gap: 10vw; */
+            width: 100%;
+        }
+    
+        .navbar__items a {
+            color: #ebf8fe;
+            font-size: 25px;
+            margin-bottom: 0px;
+            text-decoration: none;
+        }
+
+        .modal-overlay {
+            z-index: 9999;
+            width: 90vw;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          
+          .modal-box {
+            display: block;
+            background: white;
+            width: 70%;
+            height: 40%;
+            padding: 1rem;
+            border-radius: 1rem;
+          }
     }

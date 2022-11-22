@@ -5,6 +5,7 @@ type TaskCardProps = {
   id: string;
   projectId: string;
   projectTitle: string;
+  color: string;
   title: string;
   time_spent: number;
   invoiced: string;

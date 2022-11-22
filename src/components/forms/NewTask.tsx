@@ -1,9 +1,19 @@
-import { useState } from "react";
+import { useState, ReactNode } from "react";
 import { useTimeTrackContext } from "../../context/TimeTrackerContext";
 import { v4 as uuidv4 } from "uuid";
 
-function NewTaskForm() {
-  const [project, setProject] = useState({ id: "dead", title: "dead" });
+interface ModalType {
+  children?: ReactNode;
+  isOpen: boolean;
+  toggle: () => void;
+}
+
+function NewTaskForm(props: ModalType) {
+  const [project, setProject] = useState({
+    id: "dead",
+    title: "dead",
+    color: "dead",
+  });
   const [taskName, setTaskName] = useState<string>("");
   const time_spent = 0;
   const invoiced = "no";
@@ -11,26 +21,27 @@ function NewTaskForm() {
   const { addTask, projects } = useTimeTrackContext();
 
   function handleSubmit(e: any) {
-    console.log(project);
     e.preventDefault();
-    if (project.id == "dead") {
+    if (project.id == "dead" || taskName == "") {
       console.log("Invalid data, not successfull");
     } else {
       addTask(
         uuidv4(),
         project.id,
         project.title,
+        project.color,
         taskName,
         time_spent,
         invoiced
       );
       console.log("task successfully added");
+      props.toggle();
     }
   }
 
   const handleChange = (e: any) => {
     if (e.target.value == "nobueno") {
-      setProject({ id: "dead", title: "dead" });
+      setProject({ id: "dead", title: "dead", color: "dead" });
       console.log("This is an invalid project");
     } else {
       setProject(JSON.parse(e.target.value));
@@ -40,6 +51,7 @@ function NewTaskForm() {
 
   return (
     <div>
+      <button onClick={props.toggle}>X</button>
       <div>
         <h2>Create Task</h2>
       </div>

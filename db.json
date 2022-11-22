@@ -1,289 +1,83 @@
 {
   "projects": [
     {
-      "id": "bb0ec975-e29b-4126-8a18-fdba37afd077",
-      "title": "New scene",
-      "hrate": 123,
-      "color": "#f6b73c"
+      "id": "b97a6ed0-39fe-4df2-bd88-1eaa38384659",
+      "title": "Create Github",
+      "hrate": 611,
+      "color": "#008000"
     },
     {
-      "id": "97c8962e-4e56-4403-9433-567929dadcf5",
-      "title": "Older one, checks out",
-      "hrate": 345,
-      "color": "#000080"
+      "id": "ec952dcc-f22a-4dab-b33f-d71b2f511b84",
+      "title": "Develop Co-pilot",
+      "hrate": 232,
+      "color": "#ff8040"
     },
     {
-      "id": "ee4e5635-b311-4fec-bec9-26976a353408",
-      "title": "Hjelp av nils",
-      "hrate": 6661341234123,
-      "color": "#008040"
+      "id": "a10a314c-24dc-47a0-947d-83b0bf9c124e",
+      "title": "Secure funds for submarine",
+      "hrate": 771,
+      "color": "#8080ff"
+    },
+    {
+      "id": "16420b05-72c9-45c7-9b4e-34045ea71326",
+      "title": "Fly to the sun",
+      "hrate": 11,
+      "color": "#ffff00"
+    },
+    {
+      "id": "80678975-bcd9-42c7-88cc-07c6e88bc885",
+      "title": "Flee the bee",
+      "hrate": 1,
+      "color": "#800000"
     }
   ],
   "tasks": [
     {
-      "id": "83c70edd-f26a-4bd3-9191-125cea8722e2",
-      "projectId": "bb0ec975-e29b-4126-8a18-fdba37afd077",
-      "projectTitle": "New scene",
-      "title": "Yes I will",
+      "id": "7d1797fb-bf71-49ce-b96f-8eb5c1601cd7",
+      "projectId": "b97a6ed0-39fe-4df2-bd88-1eaa38384659",
+      "projectTitle": "Create Github",
+      "color": "#008000",
+      "title": "Feel the flee",
       "time_spent": 0,
       "invoiced": "no"
     },
     {
-      "id": "f860318d-e8a0-4e56-a899-7eaed96f7505",
-      "projectId": "97c8962e-4e56-4403-9433-567929dadcf5",
-      "projectTitle": "Older one, checks out",
-      "title": "Maybe u can ",
+      "id": "7dda4f41-e7f4-496f-9611-c379ed9dbb38",
+      "projectId": "ec952dcc-f22a-4dab-b33f-d71b2f511b84",
+      "projectTitle": "Develop Co-pilot",
+      "color": "#ff8040",
+      "title": "Once again I do",
       "time_spent": 0,
       "invoiced": "no"
     },
     {
-      "id": "21a4901a-a4d8-4da4-960c-2306d73d319c",
-      "projectId": "ee4e5635-b311-4fec-bec9-26976a353408",
-      "projectTitle": "Hjelp av nils",
-      "title": "Fixa timelogs",
+      "id": "190a5085-6dd3-4f89-9869-81e0f97bdd40",
+      "projectId": "a10a314c-24dc-47a0-947d-83b0bf9c124e",
+      "projectTitle": "Secure funds for submarine",
+      "color": "#8080ff",
+      "title": "Master the chaster",
       "time_spent": 0,
       "invoiced": "no"
     },
     {
-      "id": "1d719f34-33be-43cc-a114-c8b816fea664",
-      "projectId": "ee4e5635-b311-4fec-bec9-26976a353408",
-      "projectTitle": "Hjelp av nils",
-      "title": "Cripple the style",
+      "id": "2638dd2a-eef0-4967-982a-7812da814915",
+      "projectId": "16420b05-72c9-45c7-9b4e-34045ea71326",
+      "projectTitle": "Fly to the sun",
+      "color": "#ffff00",
+      "title": "Wiie the oui",
       "time_spent": 0,
       "invoiced": "no"
     },
     {
-      "id": "89cac017-9a9b-42a6-a36c-a57898d8067a",
-      "projectId": "ee4e5635-b311-4fec-bec9-26976a353408",
-      "projectTitle": "Hjelp av nils",
-      "title": "Fixa lite CSS",
-      "time_spent": 0,
-      "invoiced": "no"
-    },
-    {
-      "id": "84b68d1f-b71c-460a-bb6f-f04ff7c835d1",
-      "projectId": "ee4e5635-b311-4fec-bec9-26976a353408",
-      "projectTitle": "Hjelp av nils",
-      "title": "Göra klart alla types",
+      "id": "e9460462-bea5-4002-83d9-b10135425f33",
+      "projectId": "80678975-bcd9-42c7-88cc-07c6e88bc885",
+      "projectTitle": "Flee the bee",
+      "color": "#800000",
+      "title": "Please halp",
       "time_spent": 0,
       "invoiced": "no"
     }
   ],
-  "timelogs": [
-    {
-      "id": "269acdcd-6eea-4e30-ae03-53d48bfdb5fc",
-      "taskId": "83c70edd-f26a-4bd3-9191-125cea8722e2",
-      "active": false,
-      "start_date": "2022-11-21",
-      "start_time": 1669041747869,
-      "end_date": "2022-11-21",
-      "end_time": 1669041773227
-    },
-    {
-      "id": "71814598-c15f-4b5c-870b-2cd9b9fa7224",
-      "taskId": "83c70edd-f26a-4bd3-9191-125cea8722e2",
-      "active": false,
-      "start_date": "2022-11-21",
-      "start_time": 1669041825837,
-      "end_date": "2022-11-21",
-      "end_time": 1669041827412
-    },
-    {
-      "id": "a2cdd2e8-2029-4460-af89-4ea6b491d47a",
-      "taskId": "f860318d-e8a0-4e56-a899-7eaed96f7505",
-      "active": false,
-      "start_date": "2022-11-21",
-      "start_time": 1669041826694,
-      "end_date": "2022-11-21",
-      "end_time": 1669041828080
-    },
-    {
-      "id": "a5795dc9-c4ed-426e-9972-3c7ec2e75504",
-      "taskId": "21a4901a-a4d8-4da4-960c-2306d73d319c",
-      "active": false,
-      "start_date": "2022-11-21",
-      "start_time": 1669041835592,
-      "end_date": "2022-11-21",
-      "end_time": 1669041930970
-    },
-    {
-      "id": "be60bc73-fd46-4a29-90d3-357ac6cb98ed",
-      "taskId": "83c70edd-f26a-4bd3-9191-125cea8722e2",
-      "active": false,
-      "start_date": "2022-11-21",
-      "start_time": 1669041935986,
-      "end_date": "2022-11-21",
-      "end_time": 1669042531897
-    },
-    {
-      "id": "391a8b94-bbe2-4ee6-bb62-18149bb3158e",
-      "taskId": "f860318d-e8a0-4e56-a899-7eaed96f7505",
-      "active": false,
-      "start_date": "2022-11-21",
-      "start_time": 1669041937505,
-      "end_date": "2022-11-21",
-      "end_time": 1669042533117
-    },
-    {
-      "id": "4fc9f8c6-daf0-4383-8e72-0c46bd8a6e96",
-      "taskId": "21a4901a-a4d8-4da4-960c-2306d73d319c",
-      "active": false,
-      "start_date": "2022-11-21",
-      "start_time": 1669041938569,
-      "end_date": "2022-11-21",
-      "end_time": 1669042533660
-    },
-    {
-      "id": "cf43bc7e-91af-405c-952c-95f365c45bdd",
-      "taskId": "83c70edd-f26a-4bd3-9191-125cea8722e2",
-      "active": false,
-      "start_date": "2022-11-21",
-      "start_time": 1669041959786,
-      "end_date": "2022-11-21",
-      "end_time": 1669042532429
-    },
-    {
-      "id": "c57ecfdb-28d1-4e59-859a-082431924556",
-      "taskId": "83c70edd-f26a-4bd3-9191-125cea8722e2",
-      "active": false,
-      "start_date": "2022-11-21",
-      "start_time": 1669042537102,
-      "end_date": "2022-11-21",
-      "end_time": 1669042651663
-    },
-    {
-      "id": "8eca5f26-df45-4504-b9d1-2630e2131a5d",
-      "taskId": "21a4901a-a4d8-4da4-960c-2306d73d319c",
-      "active": false,
-      "start_date": "2022-11-21",
-      "start_time": 1669042541266,
-      "end_date": "2022-11-21",
-      "end_time": 1669042775451
-    },
-    {
-      "id": "4d96408e-f11d-4a55-9b79-ea70202e93fc",
-      "taskId": "f860318d-e8a0-4e56-a899-7eaed96f7505",
-      "active": false,
-      "start_date": "2022-11-21",
-      "start_time": 1669042588812,
-      "end_date": "2022-11-21",
-      "end_time": 1669042643114
-    },
-    {
-      "id": "4cb8f176-46d2-4398-89a3-ce18b1706d9f",
-      "taskId": "f860318d-e8a0-4e56-a899-7eaed96f7505",
-      "active": false,
-      "start_date": "2022-11-21",
-      "start_time": 1669042649760,
-      "end_date": "2022-11-21",
-      "end_time": 1669042773651
-    },
-    {
-      "id": "e673adb9-fc78-4886-af17-0560a0f50809",
-      "taskId": "83c70edd-f26a-4bd3-9191-125cea8722e2",
-      "active": false,
-      "start_date": "2022-11-21",
-      "start_time": 1669042922275,
-      "end_date": "2022-11-21",
-      "end_time": 1669043466591
-    },
-    {
-      "id": "7e165a5a-42b7-4d8a-9a95-e9a4efba2462",
-      "taskId": "83c70edd-f26a-4bd3-9191-125cea8722e2",
-      "active": false,
-      "start_date": "2022-11-21",
-      "start_time": 1669043150175,
-      "end_date": "2022-11-21",
-      "end_time": 1669043466228
-    },
-    {
-      "id": "290a07c1-a924-49d4-a533-d06e82aaf967",
-      "taskId": "83c70edd-f26a-4bd3-9191-125cea8722e2",
-      "active": false,
-      "start_date": "2022-11-21",
-      "start_time": 1669043330091,
-      "end_date": "2022-11-21",
-      "end_time": 1669043465832
-    },
-    {
-      "id": "1b2ff487-42e7-4f64-871a-a6b1a7264170",
-      "taskId": "83c70edd-f26a-4bd3-9191-125cea8722e2",
-      "active": false,
-      "start_date": "2022-11-21",
-      "start_time": 1669043330253,
-      "end_date": "2022-11-21",
-      "end_time": 1669043842592
-    },
-    {
-      "id": "4359c7a4-d1c9-44ef-bc83-6a848f2819d2",
-      "taskId": "83c70edd-f26a-4bd3-9191-125cea8722e2",
-      "active": false,
-      "start_date": "2022-11-21",
-      "start_time": 1669043330532,
-      "end_date": "2022-11-21",
-      "end_time": 1669043467271
-    },
-    {
-      "id": "6225bb2f-a821-4e79-9a4c-0ed2beb0018e",
-      "taskId": "83c70edd-f26a-4bd3-9191-125cea8722e2",
-      "active": false,
-      "start_date": "2022-11-21",
-      "start_time": 1669043330697,
-      "end_date": "2022-11-21",
-      "end_time": 1669043843382
-    },
-    {
-      "id": "a54b0758-0722-4141-88fd-493b2f84be38",
-      "taskId": "83c70edd-f26a-4bd3-9191-125cea8722e2",
-      "active": false,
-      "start_date": "2022-11-21",
-      "start_time": 1669043330931,
-      "end_date": "2022-11-21",
-      "end_time": 1669043467671
-    },
-    {
-      "id": "1b749620-545a-4a0d-8781-b327d1b70d98",
-      "taskId": "83c70edd-f26a-4bd3-9191-125cea8722e2",
-      "active": false,
-      "start_date": "2022-11-21",
-      "start_time": 1669043331192,
-      "end_date": "2022-11-21",
-      "end_time": 1669043468405
-    },
-    {
-      "id": "5c7226be-22e1-4ad8-975c-a909d9cd5228",
-      "taskId": "21a4901a-a4d8-4da4-960c-2306d73d319c",
-      "active": false,
-      "start_date": "2022-11-21",
-      "start_time": 1669043477159,
-      "end_date": "2022-11-21",
-      "end_time": 1669043844683
-    },
-    {
-      "id": "2319ddfe-eb94-4288-ab09-9824e5599883",
-      "taskId": "1d719f34-33be-43cc-a114-c8b816fea664",
-      "active": false,
-      "start_date": "2022-11-21",
-      "start_time": 1669043477725,
-      "end_date": "2022-11-21",
-      "end_time": 1669043845271
-    },
-    {
-      "id": "a32c03f9-0b11-4a87-99a9-485cfdfe760b",
-      "taskId": "89cac017-9a9b-42a6-a36c-a57898d8067a",
-      "active": false,
-      "start_date": "2022-11-21",
-      "start_time": 1669043478474,
-      "end_date": "2022-11-21",
-      "end_time": 1669043847202
-    },
-    {
-      "id": "de0d9f98-62de-4293-9fad-f64fc42acb48",
-      "taskId": "84b68d1f-b71c-460a-bb6f-f04ff7c835d1",
-      "active": true,
-      "start_date": "2022-11-21",
-      "start_time": 1669043478977
-    }
-  ],
+  "timelogs": [],
   "invoices": []
 }

@@ -8,9 +8,11 @@ type Task = {
   id: string;
   projectId: string;
   projectTitle: string;
+  color: string;
   title: string;
   time_spent: number;
   invoiced: string;
+  removeButton: boolean;
 };
 
 const TaskCard = (task: Task) => {
@@ -33,12 +35,20 @@ const TaskCard = (task: Task) => {
 
   return (
     <>
-      <div className="timer-container">
+      <div className="task-card">
+        <div
+          className="task-card-top"
+          style={{ backgroundColor: task.color }}
+        ></div>
         <h2>{task.title}</h2>
-        <h5>
-          on project: <p>{task.projectTitle}</p>
+        <h5 style={{ backgroundColor: task.color }}>
+          <p>{task.projectTitle}</p>
         </h5>
-        <Controls {...currentTask} setTimeInSeconds={setTimeInSeconds} />
+        <Controls
+          {...currentTask}
+          setTimeInSeconds={setTimeInSeconds}
+          removeButton={task.removeButton}
+        />
         {activeTimes.map((time: any) => (
           <TimeCard key={time.id} time={time} {...currentTask} />
         ))}

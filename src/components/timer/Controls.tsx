@@ -3,7 +3,7 @@ import { useTimeTrackContext } from "../../context/TimeTrackerContext";
 import { v4 as uuidv4 } from "uuid";
 
 export const Controls = (props: any) => {
-  const { addTime } = useTimeTrackContext();
+  const { addTime, removeTask } = useTimeTrackContext();
 
   const handlePlayButton = () => {
     const uuid = uuidv4();
@@ -18,9 +18,18 @@ export const Controls = (props: any) => {
     );
   };
 
+  const handleRemove = (id: number) => {
+    removeTask(id);
+    // console.log(id);
+    console.log(`Task with id ${id} has been successfully removed`);
+  };
+
   return (
     <div className="controls-container">
       <button onClick={handlePlayButton}>New Timer</button>
+      {props.removeButton ? (
+        <button onClick={() => handleRemove(props.id)}>remove</button>
+      ) : null}
     </div>
   );
 };

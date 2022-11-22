@@ -1,8 +1,14 @@
-import { useState } from "react";
+import { useState, ReactNode } from "react";
 import { useTimeTrackContext } from "../../context/TimeTrackerContext";
 import { v4 as uuidv4 } from "uuid";
 
-function NewProjectForm() {
+interface ModalType {
+  children?: ReactNode;
+  isOpen: boolean;
+  toggle: () => void;
+}
+
+function NewProjectForm(props: ModalType) {
   const [projectName, setProjectName] = useState<string>("");
   const [projectColor, setProjectColor] = useState<string>("#f6b73c");
   const [projectRate, setProjectRate] = useState<number>();
@@ -10,14 +16,14 @@ function NewProjectForm() {
 
   function handleSubmit(e: any) {
     e.preventDefault();
-
     addProject(uuidv4(), projectName, projectRate, projectColor);
-
     setProjectName("");
+    props.toggle();
   }
 
   return (
     <div>
+      <button onClick={props.toggle}>X</button>
       <div>
         <h2>Create Project</h2>
       </div>

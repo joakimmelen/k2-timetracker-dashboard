@@ -75,6 +75,7 @@ export function TimeTrackerProvider({ children }: TimeProps) {
     axios.delete(`http://localhost:3000/projects/${id}`).then(() => {
       updateProjects();
       updateTasks();
+      updateTimes();
     });
   }, []);
 
@@ -88,6 +89,7 @@ export function TimeTrackerProvider({ children }: TimeProps) {
       id: string,
       projectId: string,
       projectTitle: string,
+      color: string,
       title: string,
       time_spent: number,
       invoiced: string
@@ -97,6 +99,7 @@ export function TimeTrackerProvider({ children }: TimeProps) {
           id,
           projectId,
           projectTitle,
+          color,
           title,
           time_spent,
           invoiced,
@@ -125,6 +128,7 @@ export function TimeTrackerProvider({ children }: TimeProps) {
   const removeTask = useCallback((id: number) => {
     axios.delete(`http://localhost:3000/tasks/${id}`).then(() => {
       updateTasks();
+      updateTimes();
     });
   }, []);
 
@@ -180,6 +184,8 @@ export function TimeTrackerProvider({ children }: TimeProps) {
   const removeTime = useCallback((id: number) => {
     axios.delete(`http://localhost:3000/timelogs/${id}`).then(() => {
       updateTimes();
+      updateTasks();
+      updateProjects();
     });
   }, []);
 

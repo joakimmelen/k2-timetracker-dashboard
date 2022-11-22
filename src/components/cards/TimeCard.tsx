@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { calculateTime } from "../timer/CalculateTime";
 import { useTimeTrackContext } from "../../context/TimeTrackerContext";
+import TaskCard from "./TaskCard";
 
 const TimeCard = (props: any) => {
   const { times, editTime } = useTimeTrackContext();

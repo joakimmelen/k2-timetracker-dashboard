@@ -1,8 +1,11 @@
+import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 
 import { navigationItems } from "../config";
 
 const Navbar = () => {
+  const [classname, setClassname] = useState("toggle-button");
+
   const useAuth = () => {
     const user = localStorage.getItem("user");
     if (user) {

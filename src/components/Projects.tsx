@@ -1,8 +1,10 @@
 import { useTimeTrackContext } from "../context/TimeTrackerContext";
-import NewProjectForm from "./forms/NewProject";
+import NewProjectModal from "./modal/NewProjectModal";
+import useModal from "./hooks/useModal";
 
 const Projects = () => {
   const { projects, editProject, removeProject } = useTimeTrackContext();
+  const { isOpen, toggle } = useModal();
   // const [project, setProject] = useState<object>();
 
   const handleEdit = (project: object) =>
@@ -25,11 +27,16 @@ const Projects = () => {
       <h1>Projects</h1>
 
       <section>
-        <NewProjectForm />
+        <button onClick={toggle}>Add Project</button>
+        <NewProjectModal isOpen={isOpen} toggle={toggle} />
       </section>
-      <section>
+      <section className="cards">
         {projects.map((project: any) => (
-          <div key={project.id}>
+          <div className="project-card" key={project.id}>
+            <div
+              style={{ backgroundColor: project.color }}
+              className="project-card-top"
+            ></div>
             <h5>
               {project.title} @ {project.hrate} SEK/h
             </h5>

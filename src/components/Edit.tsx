@@ -3,9 +3,11 @@ import EditNav from "./EditNav";
 
 const Edit = () => {
   return (
-    <div className="edit">
-      <h1>Edit</h1>
-      <EditNav />
+    <div>
+      <div className="edit">
+        <h1>Edit</h1>
+        <EditNav />
+      </div>
       <Outlet />
     </div>
   );

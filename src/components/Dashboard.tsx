@@ -1,13 +1,13 @@
 import { useTimeTrackContext } from "../context/TimeTrackerContext";
-import TimeCard from "./cards/TimeCard";
+import TaskCard from "./cards/TaskCard";
 
 const Dashboard = () => {
-  const { times } = useTimeTrackContext();
+  const { tasks } = useTimeTrackContext();
   return (
     <div className="dashboard">
       <h1>Welcome to the Dashboard</h1>
-      {times.map((time: any) => (
-        <TimeCard key={time.id} time={time} />
+      {tasks.map((task: any) => (
+        <TaskCard key={task.id} {...task} />
       ))}
     </div>
   );

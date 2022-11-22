@@ -1,8 +1,12 @@
 import { useTimeTrackContext } from "../context/TimeTrackerContext";
-import NewTaskForm from "./forms/NewTask";
+import NewTaskModal from "./modal/NewTaskModal";
+import useModal from "./hooks/useModal";
+import EditTaskModal from "./modal/EditTaskModal";
+import TaskCard from "./cards/TaskCard";
 
 const Tasks = () => {
   const { tasks, editTask, removeTask } = useTimeTrackContext();
+  const { isOpen, toggle } = useModal();
   // const [project, setProject] = useState<object>();
 
   const handleEdit = (task: object) =>
@@ -15,34 +19,26 @@ const Tasks = () => {
       console.log(task);
     };
 
-  const handleRemove = (id: number) => {
-    removeTask(id);
-    console.log(`Task with id ${id} has been successfully removed`);
-  };
-
   return (
-    <div className="Tasks">
+    <div className="tasks">
       <h1>Tasks</h1>
 
       <section>
-        <NewTaskForm />
+        <button onClick={toggle}>Add Task</button>
+        <NewTaskModal isOpen={isOpen} toggle={toggle} />
       </section>
       <section>
         {tasks.map((task: any) => (
-          <div key={task.id}>
+          <div className="tasks-card" key={task.id}>
+            {/* <h3>{task.title}</h3>
             <span>
-              <h3>{task.title}</h3>
-              <h6>on project:</h6>
               <h4>{task.projectTitle}</h4>
             </span>
-            <button
-              onClick={() => {
-                handleEdit(task);
-              }}
-            >
-              edit
-            </button>
-            <button onClick={() => handleRemove(task.id)}>remove</button>
+            <button>edit</button> */}
+            <TaskCard removeButton={true} {...task} />
+            {/* <button onClick={() => handleRemove(task.id)}>
+              remove {task.title}
+            </button> */}
           </div>
         ))}
       </section>
