@@ -12,7 +12,8 @@ type Task = {
   title: string;
   time_spent: number;
   invoiced: string;
-  removeButton: boolean;
+  removeButton?: boolean | undefined;
+  allTimes?: boolean | undefined;
 };
 
 const TaskCard = (task: Task) => {
@@ -28,9 +29,14 @@ const TaskCard = (task: Task) => {
   }, [timeInSeconds]);
 
   useEffect(() => {
-    setActiveTimes(
-      times.filter((time: any) => time.taskId == task.id && time.active == true)
-    );
+    if (task.allTimes == true) {
+      setActiveTimes(times.filter((time: any) => time.taskId == task.id));
+    } else
+      setActiveTimes(
+        times.filter(
+          (time: any) => time.taskId == task.id && time.active == true
+        )
+      );
   }, [times]);
 
   return (
@@ -49,9 +55,11 @@ const TaskCard = (task: Task) => {
           setTimeInSeconds={setTimeInSeconds}
           removeButton={task.removeButton}
         />
-        {activeTimes.map((time: any) => (
-          <TimeCard key={time.id} time={time} {...currentTask} />
-        ))}
+        <div className="task-times-card">
+          {activeTimes.map((time: any) => (
+            <TimeCard key={time.id} time={time} {...currentTask} />
+          ))}
+        </div>
       </div>
     </>
   );

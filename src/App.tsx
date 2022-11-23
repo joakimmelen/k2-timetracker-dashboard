@@ -4,7 +4,7 @@ import "./styles.css";
 
 function App() {
   return (
-    <div className="app">
+    <div className="px-1">
       <Navbar />
       <MainRoutes />
     </div>

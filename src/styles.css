@@ -133,6 +133,14 @@ body {
         border-radius: 9px 9px 0 0;
     }
 
+    .task-times-card {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        column-count: 3;
+    }
+
     .edit-nav {
        margin-top: 70px;
        margin-bottom: 60px;
@@ -155,7 +163,7 @@ body {
         flex-direction: row;
         width: 70vw;
         
-        /* padding-top: 70px; */
+       
         padding-left: 250px;
         gap: 3rem;
     }
@@ -175,6 +183,18 @@ body {
         font-weight: 500;
     }
 
+    table,
+td {
+    border: 1px solid #333;
+}
+
+thead,
+tfoot {
+    background-color: #333;
+    color: #fff;
+}
+
+
     .login {
         padding-top: 70px;
         padding-left: 40px;
@@ -193,7 +213,7 @@ body {
         flex-direction: column;
         letter-spacing: 2px;
         font-size: 1rem;
-        /* margin-top: 70px; */
+       
         
     }
 
@@ -225,7 +245,7 @@ body {
         display: block;
         background: white;
         width: 70%;
-        height: 40%;
+        height: auto;
         padding: 1rem;
         border-radius: 1rem;
       }
@@ -245,7 +265,7 @@ body {
             
             width: 99vw;
             height: auto;
-            /* padding-top: 70px; */
+           
             padding-left: 1px;
             gap: 0rem;
         }
@@ -277,7 +297,7 @@ body {
             flex-direction: row-reverse;
             justify-content: space-evenly;
             padding: 10px;
-            /* gap: 10vw; */
+          
             width: 100%;
         }
     

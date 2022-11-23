@@ -7,7 +7,7 @@ const useAuth = () => {
   } else return false;
 };
 
-const PublicRoutes = (props: any) => {
+const PublicRoutes = () => {
   const auth = useAuth();
 
   return auth ? <Navigate to="/dashboard" /> : <Outlet />;

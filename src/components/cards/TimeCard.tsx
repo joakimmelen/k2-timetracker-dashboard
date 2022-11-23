@@ -1,19 +1,18 @@
 import { useEffect, useState } from "react";
 import { calculateTime } from "../timer/CalculateTime";
 import { useTimeTrackContext } from "../../context/TimeTrackerContext";
-import TaskCard from "./TaskCard";
 
 const TimeCard = (props: any) => {
-  const { times, editTime } = useTimeTrackContext();
+  const { times, editTime, editTask, removeTime } = useTimeTrackContext();
   const [timeInSeconds, setTimeInSeconds] = useState<number>(0);
   const [timerArray, setTimerArray] = useState<Array<number | string>>([]);
-  const [activeTimes, setActiveTimes] = useState([]);
+  // const [activeTimes, setActiveTimes] = useState([]);
   const [intervalId, setIntervalId] = useState<number>(0);
   const startTime = props.time.start_time;
 
-  useEffect(() => {
-    setActiveTimes(times.filter((time: any) => time.taskId == props.id));
-  }, [times]);
+  // useEffect(() => {
+  //   setActiveTimes(times.filter((time: any) => time.taskId == props.id));
+  // }, [times]);
 
   useEffect(() => {
     let timeArray: Array<number | string> = calculateTime(timeInSeconds);
@@ -38,12 +37,31 @@ const TimeCard = (props: any) => {
       new Date().toISOString().slice(0, 10),
       Date.now()
     );
-    // console.log(props.id, new Date().toISOString().slice(0, 10), Date.now());
   };
 
-  const handleClick = () => {
-    console.log((Date.now() - props.time.start_time) / 1000);
+  const handleRemove = () => {
+    removeTime(props.time.id);
+    handleEditTask(props.time.taskId);
   };
+
+  const handleEditTask = (id: "string") => {
+    let taskTimeSpent: Array<number> = [];
+    const timeMachine = times.find((time: any) =>
+      time.taskId == props.id
+        ? taskTimeSpent.push(time.end_time - time.start_time)
+        : undefined
+    );
+    let validationNation =
+      taskTimeSpent.reduce((part, x) => part + x, 0) / 1000;
+    if (isNaN(validationNation)) return;
+    else editTask(id, props.title, validationNation);
+  };
+
+  useEffect(() => {
+    if (props.id) {
+      handleEditTask(props.id);
+    } else return;
+  }, [times]);
 
   return (
     <div className="time-card-container">
@@ -52,7 +70,9 @@ const TimeCard = (props: any) => {
       <p className="timer-text">{timerArray[1]}</p>
       <span>:</span>
       <p className="timer-text">{timerArray[2]}</p>
-      {props.time.end_time ? undefined : (
+      {props.time.end_time ? (
+        <button onClick={handleRemove}>x</button>
+      ) : (
         <button onClick={handleStopButton}>Stop</button>
       )}
     </div>

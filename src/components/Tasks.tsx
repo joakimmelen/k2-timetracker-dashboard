@@ -27,7 +27,7 @@ const Tasks = () => {
         <button onClick={toggle}>Add Task</button>
         <NewTaskModal isOpen={isOpen} toggle={toggle} />
       </section>
-      <section>
+      <section className="px-2 columns-3xs">
         {tasks.map((task: any) => (
           <div className="tasks-card" key={task.id}>
             {/* <h3>{task.title}</h3>

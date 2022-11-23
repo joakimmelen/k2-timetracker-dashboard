@@ -21,10 +21,17 @@ type TimeContext = {
   addTime: Function;
   times: any;
   editTime: Function;
+  removeTime: Function;
+  addInvoice: Function;
+  invoices: any;
+  editInvoice: Function;
+  removeInvoice: Function;
 };
+
 interface TimeProps {
   children: React.ReactNode;
 }
+
 export const TimeTrackContext = createContext<TimeContext | undefined>(
   undefined
 );
@@ -161,6 +168,7 @@ export function TimeTrackerProvider({ children }: TimeProps) {
         })
         .then(() => {
           updateTimes();
+          updateTasks();
         });
     },
     []
@@ -196,7 +204,8 @@ export function TimeTrackerProvider({ children }: TimeProps) {
 
   const addInvoice = useCallback(
     (
-      projectId: number,
+      id: string,
+      projectId: string,
       status: string,
       due_date: string,
       amount: number,
@@ -205,6 +214,7 @@ export function TimeTrackerProvider({ children }: TimeProps) {
     ) => {
       axios
         .post("http://localhost:3000/invoices", {
+          id,
           projectId,
           status,
           due_date,
@@ -215,6 +225,26 @@ export function TimeTrackerProvider({ children }: TimeProps) {
         .then(() => {
           updateInvoices();
         });
+    },
+    []
+  );
+
+  const editInvoice = useCallback(
+    (
+      id: number,
+      status: string,
+      due_date: string,
+      amount: number,
+      customer_name: string
+    ) => {
+      axios
+        .patch(`http://localhost:3000/invoices/${id}`, {
+          status,
+          due_date,
+          amount,
+          customer_name,
+        })
+        .then(() => updateInvoices());
     },
     []
   );
@@ -241,6 +271,7 @@ export function TimeTrackerProvider({ children }: TimeProps) {
       removeTime,
       invoices,
       addInvoice,
+      editInvoice,
       removeInvoice,
     };
   }, [
@@ -258,6 +289,7 @@ export function TimeTrackerProvider({ children }: TimeProps) {
     removeTime,
     invoices,
     addInvoice,
+    editInvoice,
     removeInvoice,
   ]);
 

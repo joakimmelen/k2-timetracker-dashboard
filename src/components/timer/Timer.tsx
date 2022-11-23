@@ -9,6 +9,7 @@ type TaskCardProps = {
   title: string;
   time_spent: number;
   invoiced: string;
+  removeButton?: boolean | undefined;
 };
 
 const Timer = () => {

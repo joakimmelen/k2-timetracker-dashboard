@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-
 import { navigationItems } from "../config";
 
 const Navbar = () => {
@@ -23,26 +22,25 @@ const Navbar = () => {
 
   return (
     <div className="navbar">
-      <div className="navbar__items">
-        {user && (
-          <>
-            {navigationItems.navbar.map((item) => (
-              <NavLink
-                key={item.text}
-                className={({ isActive }) =>
-                  isActive ? "navbar-active" : undefined
-                }
-                to={item.to}
-              >
-                {item.name}
-              </NavLink>
-            ))}
-            {location.pathname !== "/login" && (
-              <button onClick={logout}>Log out</button>
-            )}
-          </>
-        )}
-
+      {user && (
+        <div className="navbar__items">
+          {navigationItems.navbar.map((item) => (
+            <NavLink
+              key={item.text}
+              className={({ isActive }) =>
+                isActive ? "navbar-active" : undefined
+              }
+              to={item.to}
+            >
+              {item.name}
+            </NavLink>
+          ))}
+          {location.pathname !== "/login" && (
+            <button onClick={logout}>Log out</button>
+          )}
+        </div>
+      )}
+      <div>
         {!user && (
           <NavLink
             className={({ isActive }) =>

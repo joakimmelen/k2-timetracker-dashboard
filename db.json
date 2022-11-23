@@ -1,83 +1,241 @@
 {
   "projects": [
     {
-      "id": "b97a6ed0-39fe-4df2-bd88-1eaa38384659",
-      "title": "Create Github",
-      "hrate": 611,
-      "color": "#008000"
-    },
-    {
-      "id": "ec952dcc-f22a-4dab-b33f-d71b2f511b84",
-      "title": "Develop Co-pilot",
-      "hrate": 232,
+      "id": "dee0a417-759b-47b0-872e-ff43e8294009",
+      "title": "Burn the Wurn",
+      "hrate": 10,
       "color": "#ff8040"
     },
     {
-      "id": "a10a314c-24dc-47a0-947d-83b0bf9c124e",
-      "title": "Secure funds for submarine",
-      "hrate": 771,
-      "color": "#8080ff"
+      "id": "c1e7f766-a58c-4913-a8b9-4653277712d4",
+      "title": "Hustle the House",
+      "hrate": 100,
+      "color": "#800040"
     },
     {
-      "id": "16420b05-72c9-45c7-9b4e-34045ea71326",
-      "title": "Fly to the sun",
-      "hrate": 11,
-      "color": "#ffff00"
+      "id": "26e01c95-5a5c-4035-adac-119daf3d2be7",
+      "title": "Create a cator",
+      "hrate": 50,
+      "color": "#004080"
     },
     {
-      "id": "80678975-bcd9-42c7-88cc-07c6e88bc885",
-      "title": "Flee the bee",
-      "hrate": 1,
-      "color": "#800000"
+      "id": "aaafc5d4-32ef-4b81-baee-408788ca2c96",
+      "title": "Be superfly",
+      "hrate": 200,
+      "color": "#008000"
     }
   ],
   "tasks": [
     {
-      "id": "7d1797fb-bf71-49ce-b96f-8eb5c1601cd7",
-      "projectId": "b97a6ed0-39fe-4df2-bd88-1eaa38384659",
-      "projectTitle": "Create Github",
-      "color": "#008000",
-      "title": "Feel the flee",
-      "time_spent": 0,
-      "invoiced": "no"
-    },
-    {
-      "id": "7dda4f41-e7f4-496f-9611-c379ed9dbb38",
-      "projectId": "ec952dcc-f22a-4dab-b33f-d71b2f511b84",
-      "projectTitle": "Develop Co-pilot",
+      "id": "05866d41-72b1-43ad-96ba-bc5b2148559d",
+      "projectId": "dee0a417-759b-47b0-872e-ff43e8294009",
+      "projectTitle": "Burn the Wurn",
       "color": "#ff8040",
-      "title": "Once again I do",
-      "time_spent": 0,
+      "title": "Feel the flow",
+      "time_spent": 20.268,
       "invoiced": "no"
     },
     {
-      "id": "190a5085-6dd3-4f89-9869-81e0f97bdd40",
-      "projectId": "a10a314c-24dc-47a0-947d-83b0bf9c124e",
-      "projectTitle": "Secure funds for submarine",
-      "color": "#8080ff",
-      "title": "Master the chaster",
-      "time_spent": 0,
+      "id": "325c52eb-adf4-46c4-bbe3-c3b61fb37b3a",
+      "projectId": "c1e7f766-a58c-4913-a8b9-4653277712d4",
+      "projectTitle": "Hustle the House",
+      "color": "#800040",
+      "title": "Churn the churn",
+      "time_spent": 17.998,
       "invoiced": "no"
     },
     {
-      "id": "2638dd2a-eef0-4967-982a-7812da814915",
-      "projectId": "16420b05-72c9-45c7-9b4e-34045ea71326",
-      "projectTitle": "Fly to the sun",
-      "color": "#ffff00",
-      "title": "Wiie the oui",
-      "time_spent": 0,
+      "id": "4b1c0440-3335-423b-9b61-c19d1247c470",
+      "projectId": "26e01c95-5a5c-4035-adac-119daf3d2be7",
+      "projectTitle": "Create a cator",
+      "color": "#004080",
+      "title": "Wurn the wurn",
+      "time_spent": 18.488,
       "invoiced": "no"
     },
     {
-      "id": "e9460462-bea5-4002-83d9-b10135425f33",
-      "projectId": "80678975-bcd9-42c7-88cc-07c6e88bc885",
-      "projectTitle": "Flee the bee",
-      "color": "#800000",
-      "title": "Please halp",
-      "time_spent": 0,
+      "id": "ce8144d8-9dea-4105-81a9-5d142527c9f4",
+      "projectId": "aaafc5d4-32ef-4b81-baee-408788ca2c96",
+      "projectTitle": "Be superfly",
+      "color": "#008000",
+      "title": "Angular Vue",
+      "time_spent": 180000.935,
+      "invoiced": "no"
+    },
+    {
+      "id": "ccba0d5d-9fea-4c43-9918-81f7f085c2da",
+      "projectId": "aaafc5d4-32ef-4b81-baee-408788ca2c96",
+      "projectTitle": "Be superfly",
+      "color": "#008000",
+      "title": "Master again again",
+      "time_spent": 17.755,
+      "invoiced": "no"
+    },
+    {
+      "id": "8384796c-6f90-4902-9e71-1a45a68c5117",
+      "projectId": "c1e7f766-a58c-4913-a8b9-4653277712d4",
+      "projectTitle": "Hustle the House",
+      "color": "#800040",
+      "title": "Yes please why",
+      "time_spent": 11500,
       "invoiced": "no"
     }
   ],
-  "timelogs": [],
-  "invoices": []
+  "timelogs": [
+    {
+      "id": "30543d96-7718-4204-9c3f-cbc0581a2e12",
+      "taskId": "e9460462-bea5-4002-83d9-b10135425f33",
+      "active": false,
+      "start_date": "2022-11-23",
+      "start_time": 1669150370625,
+      "end_date": "2022-11-23",
+      "end_time": 1669195640522
+    },
+    {
+      "id": "1b67e65a-19da-4657-bfff-4b05cba4fce1",
+      "taskId": "e9460462-bea5-4002-83d9-b10135425f33",
+      "active": false,
+      "start_date": "2022-11-23",
+      "start_time": 1669196796551,
+      "end_date": "2022-11-23",
+      "end_time": 1669196815266
+    },
+    {
+      "id": "5ebfe162-df15-4f03-bc92-e55cbba89b02",
+      "taskId": "e9460462-bea5-4002-83d9-b10135425f33",
+      "active": false,
+      "start_date": "2022-11-23",
+      "start_time": 1669196833572,
+      "end_date": "2022-11-23",
+      "end_time": 1669196843525
+    },
+    {
+      "id": "3160cc81-c790-495a-b045-91edb50362ed",
+      "taskId": "05866d41-72b1-43ad-96ba-bc5b2148559d",
+      "active": false,
+      "start_date": "2022-11-23",
+      "start_time": 1669208467239,
+      "end_date": "2022-11-23",
+      "end_time": 1669208487507
+    },
+    {
+      "id": "202b68b7-90a8-4967-bc24-85495f2609d6",
+      "taskId": "325c52eb-adf4-46c4-bbe3-c3b61fb37b3a",
+      "active": false,
+      "start_date": "2022-11-23",
+      "start_time": 1669208470164,
+      "end_date": "2022-11-23",
+      "end_time": 1669208488162
+    },
+    {
+      "id": "41a17e94-1a40-416c-b8e6-2b42c9c20fda",
+      "taskId": "4b1c0440-3335-423b-9b61-c19d1247c470",
+      "active": false,
+      "start_date": "2022-11-23",
+      "start_time": 1669208470782,
+      "end_date": "2022-11-23",
+      "end_time": 1669208489270
+    },
+    {
+      "id": "e3c266a4-9e18-48dd-ad40-32d251e79bae",
+      "taskId": "ce8144d8-9dea-4105-81a9-5d142527c9f4",
+      "active": false,
+      "start_date": "2022-11-23",
+      "start_time": 1669208472237,
+      "end_date": "2022-11-23",
+      "end_time": 1669208491172
+    },
+    {
+      "id": "677240f6-acfa-4eed-aa02-e25334f63801",
+      "taskId": "ccba0d5d-9fea-4c43-9918-81f7f085c2da",
+      "active": false,
+      "start_date": "2022-11-23",
+      "start_time": 1669208472845,
+      "end_date": "2022-11-23",
+      "end_time": 1669208490600
+    },
+    {
+      "id": "43605492-76f8-4c20-86c4-a7fccc5d6719",
+      "taskId": "8384796c-6f90-4902-9e71-1a45a68c5117",
+      "active": false,
+      "start_date": "2022-11-23",
+      "start_time": 1669208473519,
+      "end_date": "2022-11-23",
+      "end_time": 1669208489945
+    },
+    {
+      "id": "16ddf263-24bb-41be-a6a7-20c53461551b",
+      "taskId": "05866d41-72b1-43ad-96ba-bc5b2148559d",
+      "active": false,
+      "start_date": "2022-11-23",
+      "start_time": 1669208592903,
+      "end_date": "2022-11-23",
+      "end_time": 1669208658483
+    },
+    {
+      "id": "71fa53cb-6e14-4f79-96af-3610b0e3cfbd",
+      "taskId": "325c52eb-adf4-46c4-bbe3-c3b61fb37b3a",
+      "active": false,
+      "start_date": "2022-11-23",
+      "start_time": 1669208593763,
+      "end_date": "2022-11-23",
+      "end_time": 1669208657993
+    },
+    {
+      "id": "a2443c97-5a01-435a-b291-053cea2249a2",
+      "taskId": "4b1c0440-3335-423b-9b61-c19d1247c470",
+      "active": false,
+      "start_date": "2022-11-23",
+      "start_time": 1669208594493,
+      "end_date": "2022-11-23",
+      "end_time": 1669208657447
+    },
+    {
+      "id": "603dd68d-143e-4bdb-b79c-05e5124a70a7",
+      "taskId": "ce8144d8-9dea-4105-81a9-5d142527c9f4",
+      "active": false,
+      "start_date": "2022-11-23",
+      "start_time": 1669208595734,
+      "end_date": "2022-11-23",
+      "end_time": 1669208656623
+    }
+  ],
+  "invoices": [
+    {
+      "id": "438ee7de-96d1-43db-995d-1209f4e95bcf",
+      "projectId": "aaafc5d4-32ef-4b81-baee-408788ca2c96",
+      "status": "unpaid",
+      "due_date": "2022-12-23",
+      "amount": 10001,
+      "customer_name": "Madness Mike",
+      "created_at": "2022-11-23"
+    },
+    {
+      "id": "bc30237e-710a-495a-988d-b4c1a04ca401",
+      "projectId": "c1e7f766-a58c-4913-a8b9-4653277712d4",
+      "status": "unpaid",
+      "due_date": "2022-12-23",
+      "amount": 319,
+      "customer_name": "Yayy Leno",
+      "created_at": "2022-11-23"
+    },
+    {
+      "id": "75f568da-9993-44bb-a069-778e0cb274a9",
+      "projectId": "aaafc5d4-32ef-4b81-baee-408788ca2c96",
+      "status": "unpaid",
+      "due_date": "2022-12-23",
+      "amount": 10000,
+      "customer_name": "Mister Tyson",
+      "created_at": "2022-11-23"
+    },
+    {
+      "id": "e6a966fa-1ad5-416a-b9ab-d5a6a2067729",
+      "projectId": "dee0a417-759b-47b0-872e-ff43e8294009",
+      "status": "unpaid",
+      "due_date": "2022-12-23",
+      "amount": 0,
+      "customer_name": "Steely Dan",
+      "created_at": "2022-11-23"
+    }
+  ]
 }
