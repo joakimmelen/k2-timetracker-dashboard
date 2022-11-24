@@ -21,11 +21,13 @@ const Dashboard = () => {
 
   const calcTotalTimeMonth = () => {
     const filteredTimes = times.filter(
-      (time: any) => time.start_time > Date.now() - 2592000000
+      (time: any) => time.end_time && time.start_time > Date.now() - 2592000000
     );
+
     const addTimes = filteredTimes.map(
       (time: any) => (time.end_time - time.start_time) / 1000
     );
+
     const timeArray = calculateTime(
       addTimes.reduce((acc: any, curr: any) => acc + curr, 0)
     );
@@ -58,16 +60,18 @@ const Dashboard = () => {
     <div className="dashboard">
       <h1>Welcome to the Dashboard</h1>
       <div>
-        <p>Active projects: {projects.length}</p>
-        <p>Active tasks: {tasks.length}</p>
-        <p>Invoices created: {invoices.length}</p>
+        <p>✔️Active projects: {projects.length}</p>
+        <p>✔️Active tasks: {tasks.length}</p>
+        <p>✔️Invoices created: {invoices.length}</p>
         <p>
-          Active time past month: {activeTime[0]}:{activeTime[1]}:
+          ✔️Active time past month: {activeTime[0]}:{activeTime[1]}:
           {activeTime[2]}{" "}
         </p>
-        <p>Amount billed past year: {billedCash} SEK </p>
+        <p>✔️Amount billed past year: {billedCash} SEK </p>
       </div>
-      <button onClick={toggle}>Create invoice</button>
+
+      <button onClick={toggle}>👉Create invoice</button>
+
       <NewInvoiceModal isOpen={isOpen} toggle={toggle} />
       <InvoiceTable />
       <ProjectTable />

@@ -59,7 +59,7 @@
       "projectTitle": "Be superfly",
       "color": "#008000",
       "title": "Angular Vue",
-      "time_spent": 180000.935,
+      "time_spent": 0,
       "invoiced": "no"
     },
     {
@@ -82,33 +82,6 @@
     }
   ],
   "timelogs": [
-    {
-      "id": "30543d96-7718-4204-9c3f-cbc0581a2e12",
-      "taskId": "e9460462-bea5-4002-83d9-b10135425f33",
-      "active": false,
-      "start_date": "2022-11-23",
-      "start_time": 1669150370625,
-      "end_date": "2022-11-23",
-      "end_time": 1669195640522
-    },
-    {
-      "id": "1b67e65a-19da-4657-bfff-4b05cba4fce1",
-      "taskId": "e9460462-bea5-4002-83d9-b10135425f33",
-      "active": false,
-      "start_date": "2022-11-23",
-      "start_time": 1669196796551,
-      "end_date": "2022-11-23",
-      "end_time": 1669196815266
-    },
-    {
-      "id": "5ebfe162-df15-4f03-bc92-e55cbba89b02",
-      "taskId": "e9460462-bea5-4002-83d9-b10135425f33",
-      "active": false,
-      "start_date": "2022-11-23",
-      "start_time": 1669196833572,
-      "end_date": "2022-11-23",
-      "end_time": 1669196843525
-    },
     {
       "id": "3160cc81-c790-495a-b045-91edb50362ed",
       "taskId": "05866d41-72b1-43ad-96ba-bc5b2148559d",
@@ -191,13 +164,22 @@
       "end_time": 1669208657447
     },
     {
-      "id": "603dd68d-143e-4bdb-b79c-05e5124a70a7",
-      "taskId": "ce8144d8-9dea-4105-81a9-5d142527c9f4",
+      "id": "19f5fb25-ba7a-4e3f-90f5-dd2b027eb23c",
+      "taskId": "05866d41-72b1-43ad-96ba-bc5b2148559d",
       "active": false,
-      "start_date": "2022-11-23",
-      "start_time": 1669208595734,
-      "end_date": "2022-11-23",
-      "end_time": 1669208656623
+      "start_date": "2022-11-24",
+      "start_time": 1669282497388,
+      "end_date": "2022-11-24",
+      "end_time": 1669283088728
+    },
+    {
+      "id": "2f60b5f7-afc6-4c20-829b-7a01c9948d50",
+      "taskId": "4b1c0440-3335-423b-9b61-c19d1247c470",
+      "active": false,
+      "start_date": "2022-11-24",
+      "start_time": 1669309012079,
+      "end_date": "2022-11-24",
+      "end_time": 1669310471590
     }
   ],
   "invoices": [
@@ -236,6 +218,24 @@
       "amount": 0,
       "customer_name": "Steely Dan",
       "created_at": "2022-11-23"
+    },
+    {
+      "id": "3a0fc160-2520-4e64-a2f0-d3143ec0dc47",
+      "projectId": "c1e7f766-a58c-4913-a8b9-4653277712d4",
+      "status": "unpaid",
+      "due_date": "2022-12-24",
+      "amount": 320,
+      "customer_name": "Niku",
+      "created_at": "2022-11-24"
+    },
+    {
+      "id": "5e6f8a2c-db7d-4187-a529-26e32f81d19d",
+      "projectId": "c1e7f766-a58c-4913-a8b9-4653277712d4",
+      "status": "unpaid",
+      "due_date": "2022-12-24",
+      "amount": 320,
+      "customer_name": "Franky Banky",
+      "created_at": "2022-11-24"
     }
   ]
 }

@@ -65,11 +65,10 @@ const TimeCard = (props: any) => {
 
   return (
     <div className="time-card-container">
-      <p className="timer-text">{timerArray[0]}</p>
-      <span>:</span>
-      <p className="timer-text">{timerArray[1]}</p>
-      <span>:</span>
-      <p className="timer-text">{timerArray[2]}</p>
+      <p className="timer-text">
+        {timerArray[0]}:{timerArray[1]}:{timerArray[2]}
+      </p>
+
       {props.time.end_time ? (
         <button onClick={handleRemove}>x</button>
       ) : (

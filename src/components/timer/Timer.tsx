@@ -17,6 +17,7 @@ const Timer = () => {
 
   return (
     <>
+      <h1>Timers</h1>
       {tasks.map((task: TaskCardProps) => (
         <TaskCard key={task.id} {...task} />
       ))}

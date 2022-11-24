@@ -90,11 +90,11 @@ function NewInvoiceForm(props: ModalType) {
   };
 
   return (
-    <div>
+    <div className="modal-form">
       <button onClick={props.toggle}>X</button>
-      <div>
+      <>
         <h2>Create Invoice</h2>
-      </div>
+      </>
       <form onSubmit={handleSubmit}>
         <label htmlFor="project">For project</label>
         <select onChange={handleChange} name="project" id="project">
@@ -156,10 +156,16 @@ function NewInvoiceForm(props: ModalType) {
               {tasks.map((task: any) =>
                 task.projectId == project?.id ? (
                   <tr onClick={() => handleAddTask(task)} key={task.id}>
-                    <td>{task.title}</td>
-                    <td>{calculateTime(task.time_spent)[0]}</td>
-                    <td>{calculateTime(task.time_spent)[1]}</td>
-                    <td>{calculateTime(task.time_spent)[2]}</td>
+                    <td className="task-add-invoice">{task.title}</td>
+                    <td className="task-add-invoice">
+                      {calculateTime(task.time_spent)[0]}
+                    </td>
+                    <td className="task-add-invoice">
+                      {calculateTime(task.time_spent)[1]}
+                    </td>
+                    <td className="task-add-invoice">
+                      {calculateTime(task.time_spent)[2]}
+                    </td>
                   </tr>
                 ) : undefined
               )}
