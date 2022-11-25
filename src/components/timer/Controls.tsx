@@ -20,7 +20,6 @@ export const Controls = (props: any) => {
 
   const handleRemove = (id: number) => {
     removeTask(id);
-    // console.log(id);
     console.log(`Task with id ${id} has been successfully removed`);
   };
 

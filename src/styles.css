@@ -33,7 +33,9 @@ p, span, li, table, button, select {
     font-size: 1em;
 }
 
-h1, h2, h3, h4, h5, h6 {
+
+h1, h2, h3, h4, h5, h6, input {
+
     color: var(--mainTextColor);
 }
 
@@ -100,20 +102,20 @@ thead, tfoot {
 
     .navbar {
         background-color: var(--mainBorderColor-dark);
-        height: 2rem;
-        font-size: 1rem;
+        height: 15rem;
+        font-size: 2rem;
         display: flex;
         flex-direction: row-reverse;
         text-decoration: none;
         position: fixed;
-        bottom: .7rem;
+        bottom: 0;
         right: 0;
         align-items: center;
-        justify-content: space-evenly;
+        justify-content: space-between;
         overflow: hidden;
         width: 99vw;
         text-transform: uppercase;
-        padding: 0px 10vw 0px 0px;
+        padding: 0px 10vw 0px 40px;
     }
     .navbar a, button {
         text-decoration: none;
@@ -130,7 +132,7 @@ thead, tfoot {
     }
 
     .navbutton {
-        font-size: .4rem;
+        font-size: 1.5rem;
     }
 
     .navbar-hidden .navbutton {
@@ -160,6 +162,7 @@ thead, tfoot {
         cursor: pointer;
         position: absolute;
         right: 2px;
+        bottom: .5rem;
     }
 
 
@@ -271,6 +274,7 @@ thead, tfoot {
 
             .navbar, .navbar-hidden {
                 width: 20vw;
+                max-width: 222px;
                 background-color: var(--mainBorderColor);
                 height: 111vh;
                 position: fixed;

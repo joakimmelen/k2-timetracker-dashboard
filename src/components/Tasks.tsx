@@ -7,17 +7,6 @@ import TaskCard from "./cards/TaskCard";
 const Tasks = () => {
   const { tasks, editTask, removeTask } = useTimeTrackContext();
   const { isOpen, toggle } = useModal();
-  // const [project, setProject] = useState<object>();
-
-  const handleEdit = (task: object) =>
-    //
-    // id: number,
-    // title?: string,
-    // hrate?: number,
-    // color?: string
-    {
-      console.log(task);
-    };
 
   return (
     <div className="tasks">
@@ -30,15 +19,7 @@ const Tasks = () => {
       <section className="px-2 columns-3xs">
         {tasks.map((task: any) => (
           <div className="tasks-card" key={task.id}>
-            {/* <h3>{task.title}</h3>
-            <span>
-              <h4>{task.projectTitle}</h4>
-            </span>
-            <button>edit</button> */}
             <TaskCard removeButton={true} {...task} />
-            {/* <button onClick={() => handleRemove(task.id)}>
-              remove {task.title}
-            </button> */}
           </div>
         ))}
       </section>

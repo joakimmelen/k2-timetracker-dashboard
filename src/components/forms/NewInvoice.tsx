@@ -68,7 +68,6 @@ function NewInvoiceForm(props: ModalType) {
       timeCash.push(item.time_spent)
     );
     const reducer = timeCash.reduce((acc, curr) => acc + curr, 0);
-    console.log(reducer);
     const adderator = reducer / 60 / 60;
     if (project?.hrate) {
       return adderator * project?.hrate;
@@ -79,7 +78,6 @@ function NewInvoiceForm(props: ModalType) {
     const cashDollars = calculator();
     if (cashDollars) {
       setAmount(cashDollars);
-      // console.log(cashDollars);
     }
   }, [billedTasks]);
 

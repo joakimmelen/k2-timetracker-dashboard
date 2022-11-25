@@ -23,6 +23,12 @@
       "title": "Be superfly",
       "hrate": 200,
       "color": "#008000"
+    },
+    {
+      "id": "2aac0f28-1893-4d44-a1f0-7f4eaa3c20f7",
+      "title": "Hej Oscar",
+      "hrate": 123,
+      "color": "#0000a0"
     }
   ],
   "tasks": [
@@ -78,6 +84,15 @@
       "color": "#800040",
       "title": "Yes please why",
       "time_spent": 11500,
+      "invoiced": "no"
+    },
+    {
+      "id": "fc1599ad-9039-4aa3-b392-8348c2be8003",
+      "projectId": "2aac0f28-1893-4d44-a1f0-7f4eaa3c20f7",
+      "projectTitle": "Hej Oscar",
+      "color": "#0000a0",
+      "title": "Hejadae ",
+      "time_spent": 0,
       "invoiced": "no"
     }
   ],
@@ -180,6 +195,15 @@
       "start_time": 1669309012079,
       "end_date": "2022-11-24",
       "end_time": 1669310471590
+    },
+    {
+      "id": "baf3af9d-068b-48c7-8b5d-c6551323c8ef",
+      "taskId": "fc1599ad-9039-4aa3-b392-8348c2be8003",
+      "active": false,
+      "start_date": "2022-11-25",
+      "start_time": 1669398565225,
+      "end_date": "2022-11-25",
+      "end_time": 1669399168252
     }
   ],
   "invoices": [
@@ -236,6 +260,15 @@
       "amount": 320,
       "customer_name": "Franky Banky",
       "created_at": "2022-11-24"
+    },
+    {
+      "id": "2562fd62-848d-4094-83e7-1f4c2ddecb88",
+      "projectId": "c1e7f766-a58c-4913-a8b9-4653277712d4",
+      "status": "unpaid",
+      "due_date": "2022-12-25",
+      "amount": 320,
+      "customer_name": "Oscar",
+      "created_at": "2022-11-25"
     }
   ]
 }
